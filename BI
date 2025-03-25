@@ -1181,5 +1181,17 @@ Go
 
 
 
+Data Analysis Using Python  (Slip 8 )
+
+
+import pandas as pd
+df=pd.read_csv("sales_data.csv")
+print(df.head())
+print("\nTotal Sales:",df['Sales'].sum())
+print("\nTotal Sales:",df['Profit'].sum())
+df.groupby('Category')["Sales"].sum()
+
+sf_summary= pd.DataFrame({"Toatal Sales":[df["Sales"].sum()],"Toatal Profit":[df["Profit"].sum()]})
+df_summary.to_csv("salessummary.csv",index=False)   
 
 
