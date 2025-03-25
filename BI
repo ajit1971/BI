@@ -1195,3 +1195,16 @@ sf_summary= pd.DataFrame({"Toatal Sales":[df["Sales"].sum()],"Toatal Profit":[df
 df_summary.to_csv("salessummary.csv",index=False)   
 
 
+
+
+Decision Tree Code
+
+
+install.packages("party")
+library(party)
+data <- read.csv("\\User\\Sonu\\Downloads\\tips.csv")
+print(head(data))
+input.data=data[c(1:105),]
+output.tree <- ctree(total_bill~tip+size, data=input.data)
+plot(output.tree)
+
