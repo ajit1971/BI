@@ -27,6 +27,10 @@ abline(lm(y ~ x), col="black")
 
 5.Perform the logistic regression on the given data warehouse data using R/Python
 
+https://itvoyagers.in/wp-content/uploads/2019/02/ITVoyagers-BI-PRACTICAL-10-MU-TYIT.pdf
+
+
+
 quality <- read.csv('C:/Users/Gauri/Downloads/quality.csv')
 str(quality)
 table(quality$PoorCare)
