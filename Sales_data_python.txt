@@ -1,0 +1,18 @@
+import pandas as pd
+
+df = pd.read_csv("tips.csv")
+print(df.head())
+
+print("\nTotal Sales:", df['total_bill'].sum())
+print("\nTotal Tips:", df['tip'].sum())  # Fixed label
+
+# Check if 'Category' column exists before using groupby
+if 'Category' in df.columns:
+    print("\nTotal Sales by Category:\n", df.groupby('Category')["total_bill"].sum())
+
+# Creating summary DataFrame
+df_summary = pd.DataFrame({"Total Bill": [df["total_bill"].sum()], "Total Tip": [df["tip"].sum()]})
+
+# Save to CSV
+df_summary.to_csv("salessummary.csv", index=False)
+print("\nSales summary saved to 'salessummary.csv'")
